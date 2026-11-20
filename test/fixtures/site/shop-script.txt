@@ -1,0 +1,28 @@
+// 시험용: 스크립트로 그리는 가게. 가격 탭, 접힌 글, 더 보기, 그리고 누르면 안 되는 단추가 있다. 코드 안에는 화면에 없는 경로 이름이 들어 있다.
+(function () {
+  var ROUTES = [{ path: "/dashboard" }, { path: "/my/orders" }, { path: "/lessons/:id" }, { path: "/shop-pricing" }, { path: "/static/skip.js" }];
+  var API = "/api/checkout";
+  var PLANS = [{ planName: "스타터", price: 12900 }, { planName: "프로", price: 39e3 }];
+  function pay() { return window.TossPayments && window.TossPayments("test_ck_fixture"); }
+  void ROUTES; void API; void PLANS; void pay;
+  setTimeout(function () {
+    var root = document.getElementById('root');
+    root.innerHTML = '<header style="height:70px"><nav><a href="/shop">달콤 구독</a> <a href="/login">로그인</a> <a href="/signup">회원가입</a></nav></header>'
+      + '<main>'
+      + '<section style="height:520px"><h1>매주 금요일, 디저트 한 상자</h1><p>시험용으로 지어낸 가게입니다.</p><img src="https://i.vimeocdn.com/video/fixture.jpg" style="width:100%;height:300px" alt=""><iframe src="https://player.vimeo.com/video/1" style="width:10px;height:10px"></iframe></section>'
+      + '<section style="height:460px"><h2>요금</h2><div role="tablist"><button role="tab" aria-selected="true" id="tab-month">월간</button> <button role="tab" aria-selected="false" id="tab-year">연간</button></div><p id="plan">한 달 12,900원</p>'
+      + '<button id="buy">구독 신청하기</button> <form action="/subscribe" method="post"><input name="email"><button type="submit">소식 받기</button></form></section>'
+      + '<section style="height:700px"><h2>상자에 담기는 것</h2><ul><li>구움과자</li><li>작은 케이크</li><li>제철 과일청</li><li>손글씨 카드</li></ul><button id="more">더 보기</button><div id="extra"></div></section>'
+      + '<section style="height:300px"><h2>자주 묻는 질문</h2><details><summary>언제 도착하나요?</summary><p>시험용 답입니다.</p></details><details><summary>한 주 쉴 수 있나요?</summary><p>시험용 답입니다.</p></details></section>'
+      + '</main>'
+      + '<footer style="height:160px"><a href="/terms">이용약관</a> <a href="/refund">환불 정책</a></footer>';
+    document.getElementById('tab-year').addEventListener('click', function () {
+      document.getElementById('tab-month').setAttribute('aria-selected', 'false');
+      this.setAttribute('aria-selected', 'true');
+      document.getElementById('plan').textContent = '한 해 129,000원';
+    });
+    document.getElementById('more').addEventListener('click', function () { document.getElementById('extra').textContent = '상자 구성은 매주 바뀝니다.'; });
+    // 아래 단추는 누르면 안 된다. 눌리면 서버에 흔적이 남는다.
+    document.getElementById('buy').addEventListener('click', function () { fetch('/clicked-buy').catch(function () {}); location.href = '/checkout?plan=month'; });
+  }, 120);
+})();

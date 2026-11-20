@@ -1,0 +1,5 @@
+/* 시험용으로 지어낸 가게의 스타일 */
+body { margin: 0; font-family: system-ui, sans-serif; color: #2b2622; background: #f6f1e7; }
+.bar, .intro, .classes, .closing, .foot { max-width: 760px; margin: 0 auto; padding: 24px; }
+.bar a { margin-right: 16px; color: #6b4a2b; }
+h1 { font-size: 34px; }

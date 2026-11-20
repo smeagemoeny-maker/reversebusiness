@@ -1,0 +1,327 @@
+{
+  "schema": "rebiz/report@1",
+  "meta": {
+    "target": {
+      "name": "비주얼 바이브코딩 강의 | AI CITY BUILDERS",
+      "kind": "web-service",
+      "url": "https://www.aicitybuilders.com/vibecoding",
+      "relation": "third-party"
+    },
+    "analyzed_at": "2026-11-17",
+    "analyst": "from-rea 초안 (사람이나 에이전트가 완성한다)",
+    "scope": "공개 페이지 3개를 REA 로 읽었다. 로그인, 결제, 잠긴 화면은 보지 않았다. 이 파일은 공개용으로 줄인 사본이다. 원본 제목과 버튼의 목록은 개수만 남겼고, 가격은 2026-11-17 에 읽은 값이다.",
+    "method": [
+      "REA inspect-web-page (접근성 글자, 구조, 저장소 키 이름)",
+      "REA capture-web-screenshot (보이는 화면 한 장)",
+      "REA analyze-web-bundle (스크립트를 실행 없이 읽기)",
+      "공개 HTML 한 장 (머리말 메타 보충)",
+      "robots.txt 읽기",
+      "from-rea.mjs 로 초안 만들기"
+    ],
+    "terms": {
+      "status": "checked",
+      "note": "robots.txt: Allow /, Disallow /api/. 이용약관 페이지를 받아 두었다. 자동 열람과 복제에 관한 조항은 사람이 읽고 여기에 덧붙인다.",
+      "evidence": [
+        "E8",
+        "E2"
+      ]
+    },
+    "one_line": ""
+  },
+  "evidence": [
+    {
+      "id": "E1",
+      "type": "url",
+      "ref": "https://www.aicitybuilders.com/vibecoding",
+      "note": "REA inspect-web-page 로 읽은 공개 페이지. 제목 \"비주얼 바이브코딩 강의 | AI CITY BUILDERS\".",
+      "seen_at": "2026-11-17"
+    },
+    {
+      "id": "E2",
+      "type": "url",
+      "ref": "https://www.aicitybuilders.com/terms",
+      "note": "REA inspect-web-page 로 읽은 공개 페이지. 제목 \"서비스 이용약관 | AI CITY BUILDERS\".",
+      "seen_at": "2026-11-17"
+    },
+    {
+      "id": "E3",
+      "type": "url",
+      "ref": "https://www.aicitybuilders.com/refund-policy",
+      "note": "REA inspect-web-page 로 읽은 공개 페이지. 제목 \"AI CITY BUILDERS\".",
+      "seen_at": "2026-11-17"
+    },
+    {
+      "id": "E4",
+      "type": "screen",
+      "ref": "evidence/07_screenshot_desktop_full.json",
+      "note": "REA capture-web-screenshot 기록. 보이는 화면 1440x8426. 대상 https://www.aicitybuilders.com/vibecoding (원본은 공개 저장소에 없음)",
+      "seen_at": "2026-11-17"
+    },
+    {
+      "id": "E5",
+      "type": "screen",
+      "ref": "evidence/09_screenshot_narrow500_full.json",
+      "note": "REA capture-web-screenshot 기록. 보이는 화면 500x9075. 대상 https://www.aicitybuilders.com/vibecoding (원본은 공개 저장소에 없음)",
+      "seen_at": "2026-11-17"
+    },
+    {
+      "id": "E6",
+      "type": "doc",
+      "ref": "evidence/04_bundle_evidence.json",
+      "note": "REA analyze-web-bundle 기록. 스크립트 10개 가운데 9개를 실행 없이 읽음 (partial) (원본은 공개 저장소에 없음)",
+      "seen_at": "2026-11-17"
+    },
+    {
+      "id": "E7",
+      "type": "doc",
+      "ref": "evidence/12_public.html",
+      "note": "공개 HTML 한 장 사본 (8670 바이트). 머리말 메타와 JSON-LD 만 읽음 (원본은 공개 저장소에 없음)",
+      "seen_at": "2026-11-17"
+    },
+    {
+      "id": "E8",
+      "type": "doc",
+      "ref": "evidence/robots.txt",
+      "note": "robots.txt 사본. Allow /, Disallow /api/ (원본은 공개 저장소에 없음)",
+      "seen_at": "2026-11-17"
+    }
+  ],
+  "sections": {
+    "money": {
+      "customer": [
+        {
+          "text": "누가 사는지는 아직 읽지 않았다. 사람이 채운다.",
+          "status": "unknown",
+          "evidence": []
+        }
+      ],
+      "problem": [
+        {
+          "text": "어떤 문제를 푸는지는 아직 읽지 않았다. 사람이 채운다.",
+          "status": "unknown",
+          "evidence": []
+        }
+      ],
+      "price": [
+        {
+          "text": "화면에 가격 문구가 보인다: \"얼리버드 ₩45,000 · D-5\" (2026-11-17 에 읽은 값)",
+          "status": "observed",
+          "evidence": [
+            "E1"
+          ]
+        },
+        {
+          "text": "화면에 가격 문구가 보인다: \"₩ 45,000\" (2026-11-17 에 읽은 값)",
+          "status": "observed",
+          "evidence": [
+            "E1"
+          ]
+        },
+        {
+          "text": "화면에 가격 문구가 보인다: \"2026년 11월 23일 부터 ₩ 95,000\" (2026-11-17 에 읽은 값)",
+          "status": "observed",
+          "evidence": [
+            "E1"
+          ]
+        }
+      ],
+      "revenue": []
+    },
+    "flow": {
+      "steps": [
+        {
+          "stage": "signup",
+          "label": "가입",
+          "text": "가입으로 가는 누르는 곳이 보인다: \"회원가입\". 가입 절차 자체는 열어 보지 않았다.",
+          "status": "observed",
+          "evidence": [
+            "E1"
+          ]
+        },
+        {
+          "stage": "first_value",
+          "label": "첫 가치",
+          "text": "처음 값을 느끼는 순간이 무엇인지는 아직 읽지 않았다. 사람이 채운다.",
+          "status": "unknown",
+          "evidence": []
+        },
+        {
+          "stage": "payment",
+          "label": "결제",
+          "text": "결제나 신청으로 이어지는 문구가 보인다: \"로그인하고 수강 신청\" 외 2개. 결제 화면은 열지 않았다.",
+          "status": "observed",
+          "evidence": [
+            "E1"
+          ]
+        }
+      ]
+    },
+    "map": {
+      "screens": [
+        {
+          "name": "비주얼 바이브코딩 강의 | AI CITY BUILDERS",
+          "purpose": "아직 쓰지 않음. 구역 순서와 누르는 곳만 옮겼다.",
+          "features": [
+            "구역 1 (navigation)",
+            "구역 2 (region)",
+            "구역 3 (region)",
+            "구역 4 (complementary)",
+            "구역 5 (navigation)",
+            "구역 6 (region)",
+            "구역 7 (region)",
+            "구역 8 (navigation)",
+            "제목 15개 (목록은 공개용 사본에서 뺌)",
+            "버튼 9개 (목록은 공개용 사본에서 뺌)",
+            "접었다 펴는 항목 5개",
+            "링크 31개"
+          ],
+          "status": "observed",
+          "evidence": [
+            "E1",
+            "E4",
+            "E5"
+          ]
+        },
+        {
+          "name": "서비스 이용약관 | AI CITY BUILDERS",
+          "purpose": "아직 쓰지 않음. 구역 순서와 누르는 곳만 옮겼다.",
+          "features": [
+            "구역 1 (navigation)",
+            "구역 2 (navigation)",
+            "제목 17개 (목록은 공개용 사본에서 뺌)",
+            "버튼 7개 (목록은 공개용 사본에서 뺌)",
+            "링크 28개"
+          ],
+          "status": "observed",
+          "evidence": [
+            "E2"
+          ]
+        },
+        {
+          "name": "AI CITY BUILDERS",
+          "purpose": "아직 쓰지 않음. 구역 순서와 누르는 곳만 옮겼다.",
+          "features": [
+            "구역 1 (navigation)",
+            "제목 4개 (목록은 공개용 사본에서 뺌)",
+            "버튼 6개 (목록은 공개용 사본에서 뺌)",
+            "링크 5개"
+          ],
+          "status": "observed",
+          "evidence": [
+            "E3"
+          ]
+        }
+      ]
+    },
+    "tech": {
+      "items": [
+        {
+          "layer": "스크립트",
+          "text": "같은 출처에서 스크립트 10개가 실렸다. 파일 이름은 해시가 붙은 main 하나와 번호가 붙은 chunk 들이다.",
+          "status": "observed",
+          "evidence": [
+            "E1"
+          ]
+        },
+        {
+          "layer": "브라우저 저장소",
+          "text": "localStorage 키 이름 1개, IndexedDB 이름 2개. 값은 읽지 않았다.",
+          "status": "observed",
+          "evidence": [
+            "E1"
+          ]
+        },
+        {
+          "layer": "실린 자원",
+          "text": "같은 출처 자원 종류: image/webp 5개, image/png 1개, video/mp4 4개, application/javascript 1개",
+          "status": "observed",
+          "evidence": [
+            "E1"
+          ]
+        },
+        {
+          "layer": "경로 후보",
+          "text": "스크립트 글자 안에 경로 모양이 14개 보인다 (목록은 공개용 사본에서 뺌). 열어 보지는 않았다.",
+          "status": "observed",
+          "evidence": [
+            "E6"
+          ]
+        },
+        {
+          "layer": "읽지 못한 스크립트",
+          "text": "스크립트 10개 가운데 1개는 정적 분석이 끝나지 않았다 (REA 가 적은 사유: resource_constraint). 그 안의 경로와 호출은 모른다.",
+          "status": "unknown",
+          "evidence": []
+        },
+        {
+          "layer": "머리말 메타",
+          "text": "HTML 머리말에 메타 24개 (공유용 13개), JSON-LD 3건 (EducationalOrganization, Course, BreadcrumbList). lang=ko",
+          "status": "observed",
+          "evidence": [
+            "E7"
+          ]
+        },
+        {
+          "layer": "다른 출처",
+          "text": "REA 가 기록에서 뺀 다른 출처 항목: metadata 15개, resources 74개, scripts 1개. 어느 서비스의 것인지는 모른다.",
+          "status": "unknown",
+          "evidence": []
+        },
+        {
+          "layer": "서버",
+          "text": "서버 쪽 구성과 데이터 저장 방식은 밖에서 보이지 않는다.",
+          "status": "unknown",
+          "evidence": []
+        }
+      ]
+    },
+    "unknowns": [
+      {
+        "question": "누가 사는가",
+        "why": "페이지 문구만으로 고객을 정하지 않았다. 초안은 본 것만 옮긴다.",
+        "next": "페이지가 직접 말하는 대상 문구를 근거로 붙여 사람이 채운다."
+      },
+      {
+        "question": "어떤 문제를 푸는가",
+        "why": "초안은 해석을 하지 않는다.",
+        "next": "소개 문단을 읽고 내 말로 한 줄 쓴다."
+      },
+      {
+        "question": "매출, 구매자 수, 전환율",
+        "why": "공개된 숫자를 찾지 못했다.",
+        "next": "대상이 직접 공개한 자료가 있을 때만 적는다. 없으면 비워 둔다."
+      },
+      {
+        "question": "가입과 결제 뒤 화면",
+        "why": "로그인과 결제 뒤는 열지 않는다.",
+        "next": "공개 도움말이나 대상이 공개한 영상이 있으면 그것만 본다."
+      },
+      {
+        "question": "페이지가 처음 뜰 때 오간 요청",
+        "why": "REA 는 붙은 뒤의 요청만 기록한다. 붙기 전 요청은 기록에 없다.",
+        "next": "REA 를 먼저 붙인 뒤 페이지를 다시 여는 방법이 있으나, 요청 수 한도 안에서만 한다."
+      }
+    ],
+    "my_version": {
+      "working_name": "",
+      "same_problem": "",
+      "who": "",
+      "mvp": [],
+      "differences": [
+        {
+          "title": "",
+          "text": ""
+        },
+        {
+          "title": "",
+          "text": ""
+        },
+        {
+          "title": "",
+          "text": ""
+        }
+      ],
+      "not_taken": []
+    }
+  }
+}

@@ -1,0 +1,20 @@
+// 시험용: 화면을 스크립트로 그리는 가게 페이지. 받은 HTML 에는 글이 없다. (시험 도구가 시험 파일로 착각하지 않도록 .txt 로 두고 서버가 /spa.js 로 내보낸다.)
+(function () {
+  // 아래 세 요청은 그려 읽는 브라우저 안에서 막혀야 한다 (robots 금지 주소, GET 이 아닌 요청).
+  fetch('/api/data').catch(function () {});
+  fetch('/collect', { method: 'POST', body: 'visit=1' }).catch(function () {});
+  try { document.cookie = 'fromscript=should-not-come-back; path=/'; } catch (e) {}
+  setTimeout(function () {
+    var pricing = location.pathname === '/spa-pricing';
+    document.getElementById('root').innerHTML = pricing
+      ? '<main><section style="height:500px"><h1>요금 안내</h1><p>한 달 12,900원, 석 달 34,000원. 시험용으로 지어낸 값입니다.</p></section></main>'
+      : '<header style="height:70px"><nav><a href="/spa">별빛 반찬</a> <a href="/spa-pricing">요금 안내</a> <a href="/login">로그인</a> <a href="/signup">회원가입</a></nav></header>'
+        + '<main>'
+        + '<section style="height:620px"><h1>아침마다 문 앞에 반찬 세 가지</h1><p>시험용으로 지어낸 가게입니다.</p><video style="width:100%;height:360px"></video></section>'
+        + '<section style="height:420px"><h2>한 달 12,900원부터</h2><p>처음 한 주는 3,000원입니다.</p><button>구독 신청하기</button></section>'
+        + '<section style="height:900px"><h2>이번 주 반찬</h2><ul><li>멸치 볶음</li><li>달걀 장조림</li><li>시금치 무침</li><li>두부 조림</li><li>오이 소박이</li></ul></section>'
+        + '<section style="height:300px"><h2>자주 묻는 질문</h2><details><summary>배달 요일은요?</summary><p>시험용 답입니다.</p></details><details><summary>쉬어 갈 수 있나요?</summary><p>시험용 답입니다.</p></details></section>'
+        + '</main>'
+        + '<footer style="height:160px"><a href="/terms">이용약관</a> <a href="/refund">환불 정책</a> <a href="/newsletter">뉴스레터 구독</a></footer>';
+  }, 120);
+})();

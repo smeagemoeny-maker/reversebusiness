@@ -1,0 +1,607 @@
+{
+  "schema": "rebiz/report@1",
+  "meta": {
+    "target": {
+      "name": "AI CITY BUILDERS 비주얼 바이브코딩 판매 페이지",
+      "kind": "web-service",
+      "url": "https://www.aicitybuilders.com/vibecoding",
+      "relation": "third-party"
+    },
+    "analyzed_at": "2026-11-17",
+    "analyst": "reversebusiness 스킬을 따른 에이전트 (리허설)",
+    "depth": {
+      "mode": "precise",
+      "reached": "code",
+      "steps": [
+        {
+          "key": "surface",
+          "state": "done",
+          "note": "REA inspect-web-page 로 공개 페이지 3개의 글과 구조를 읽음"
+        },
+        {
+          "key": "flow",
+          "state": "skipped",
+          "note": "이 리허설에서는 아무것도 누르지 않았다. 접힌 글과 탭 안쪽은 읽지 못했다"
+        },
+        {
+          "key": "code",
+          "state": "partial",
+          "note": "REA analyze-web-bundle 로 스크립트 10개 가운데 9개를 실행 없이 읽음. 가장 큰 1개는 분석이 끝나지 않았다"
+        }
+      ]
+    },
+    "scope": "채널 주인 본인의 공개 판매 페이지를 남의 서비스와 같은 방식으로, 밖에서 보이는 것만 읽은 리허설이다. 본 것: 판매 페이지, 이용약관, 환불 정책, robots.txt (공개 주소 4개, 요청 사이 2초 이상). 보지 않은 것: 로그인, 가입, 결제, 강의실, 소스 저장소. 아무것도 누르거나 제출하지 않았다. 가격과 날짜는 모두 2026-11-17 에 읽은 값이다. 근거 원본(화면 캡처, 받아 둔 HTML, REA 기록)은 공개 저장소에 올리지 않았다.",
+    "method": [
+      "임시 프로필의 별도 브라우저에 페이지를 띄우고 REA 로 붙어서 읽기 (내 브라우저 프로필과 쿠키는 쓰지 않음)",
+      "REA list-browser-targets, capture-web-screenshot (전체 길이 1440, 좁은 화면 500)",
+      "REA inspect-web-page (접근성 글자, 구조, 저장소 키 이름. 값은 읽지 않음)",
+      "REA analyze-web-bundle (스크립트를 실행 없이 읽기. 10개 가운데 9개만 끝남)",
+      "공개 HTML 한 장을 한 번 받아 머리말 메타 보충",
+      "from-rea.mjs 로 초안을 만든 뒤 스킬 절차대로 사람이 읽고 완성"
+    ],
+    "terms": {
+      "status": "checked",
+      "note": "robots.txt 는 모든 로봇에 / 를 허용하고 /api/ 만 막는다. /api/ 는 직접 요청하지 않았다. 이용약관(시행일 2026-10-22)에서 공개 페이지의 자동 열람을 금지하는 조항은 찾지 못했다. 다만 콘텐츠를 복제, 재배포하거나 그것으로 다른 강의나 교재를 만드는 것(제7조), 유료 자료의 잠금을 우회하거나 시스템에 무리를 주는 것(제8조)은 금지한다. 그래서 공개 페이지만 느리게 읽고, 문구와 자료는 가져오지 않는다.",
+      "evidence": [
+        "E8",
+        "E2"
+      ]
+    },
+    "one_line": "코드로 영상과 3D 를 만드는 법을 가르치는 온라인 강의를, 공개 전 할인가로 미리 파는 한 장짜리 판매 페이지."
+  },
+  "evidence": [
+    {
+      "id": "E1",
+      "type": "url",
+      "ref": "https://www.aicitybuilders.com/vibecoding",
+      "note": "REA inspect-web-page 로 읽은 공개 페이지. 제목 \"비주얼 바이브코딩 강의 | AI CITY BUILDERS\".",
+      "seen_at": "2026-11-17"
+    },
+    {
+      "id": "E2",
+      "type": "url",
+      "ref": "https://www.aicitybuilders.com/terms",
+      "note": "REA inspect-web-page 로 읽은 공개 페이지. 제목 \"서비스 이용약관 | AI CITY BUILDERS\".",
+      "seen_at": "2026-11-17"
+    },
+    {
+      "id": "E3",
+      "type": "url",
+      "ref": "https://www.aicitybuilders.com/refund-policy",
+      "note": "REA inspect-web-page 로 읽은 공개 페이지. 제목 \"AI CITY BUILDERS\".",
+      "seen_at": "2026-11-17"
+    },
+    {
+      "id": "E4",
+      "type": "screen",
+      "ref": "evidence/07_screenshot_desktop_full.json",
+      "note": "REA capture-web-screenshot 기록. 보이는 화면 1440x8426. 대상 https://www.aicitybuilders.com/vibecoding (원본은 공개 저장소에 없음)",
+      "seen_at": "2026-11-17"
+    },
+    {
+      "id": "E5",
+      "type": "screen",
+      "ref": "evidence/09_screenshot_narrow500_full.json",
+      "note": "REA capture-web-screenshot 기록. 보이는 화면 500x9075. 대상 https://www.aicitybuilders.com/vibecoding (원본은 공개 저장소에 없음)",
+      "seen_at": "2026-11-17"
+    },
+    {
+      "id": "E6",
+      "type": "doc",
+      "ref": "evidence/04_bundle_evidence.json",
+      "note": "REA analyze-web-bundle 기록. 스크립트 10개 가운데 9개를 실행 없이 읽음 (partial) (원본은 공개 저장소에 없음)",
+      "seen_at": "2026-11-17",
+      "seen": "code"
+    },
+    {
+      "id": "E7",
+      "type": "doc",
+      "ref": "evidence/12_public.html",
+      "note": "공개 HTML 한 장 사본 (8670 바이트). 머리말 메타와 JSON-LD 만 읽음 (원본은 공개 저장소에 없음)",
+      "seen_at": "2026-11-17"
+    },
+    {
+      "id": "E8",
+      "type": "doc",
+      "ref": "evidence/robots.txt",
+      "note": "robots.txt 사본. Allow /, Disallow /api/ (원본은 공개 저장소에 없음)",
+      "seen_at": "2026-11-17"
+    },
+    {
+      "id": "E9",
+      "type": "doc",
+      "ref": "evidence/robots.headers.txt",
+      "note": "robots.txt 를 받을 때 온 응답 머리말 사본. 보안 머리말(HSTS, CSP 등)이 있고 서버 종류를 알리는 줄은 없다 (원본은 공개 저장소에 없음)",
+      "seen_at": "2026-11-17"
+    },
+    {
+      "id": "E10",
+      "type": "screen",
+      "ref": "evidence/02_screenshot_viewport.png",
+      "note": "REA 로 처음 찍은 첫 화면(1440x813). 나중에 찍은 전체 길이 캡처와 소개 영상의 장면이 달라, 영상이 저절로 재생된다는 것을 알 수 있다 (원본은 공개 저장소에 없음)",
+      "seen_at": "2026-11-17"
+    }
+  ],
+  "sections": {
+    "money": {
+      "customer": [
+        {
+          "text": "페이지는 누구를 위한 강의인지 따로 이름 붙여 말하지 않는다. 대상에 가까운 단서는 보통 컴퓨터로 가능하다는 안내와, 강마다 적힌 결과물 예시(내 채널이나 가게의 인트로 영상, 상세 페이지용 모션, 내 랜딩 페이지)다.",
+          "status": "observed",
+          "evidence": [
+            "E1"
+          ]
+        },
+        {
+          "text": "결과물 예시로 보아 자기 채널, 가게, 서비스를 가진 1인 사업자나 크리에이터 가운데 영상 편집을 전문으로 하지 않는 사람을 겨냥한 것으로 추정한다.",
+          "status": "inferred",
+          "evidence": [
+            "E1"
+          ]
+        },
+        {
+          "text": "실제로 사는 사람이 누구인지(직업, 경험 수준, 나라)는 모른다.",
+          "status": "unknown",
+          "evidence": []
+        }
+      ],
+      "problem": [
+        {
+          "text": "페이지가 내세우는 대비: 이미지나 영상을 생성하는 방식은 다시 뽑을 때마다 비용이 들고, 코드로 만들면 한 줄만 고쳐 바꿀 수 있다.",
+          "status": "observed",
+          "evidence": [
+            "E1"
+          ]
+        },
+        {
+          "text": "푸는 방식: 강의 11개와 함께 자료실(예제, 프롬프트, 3D 모델 묶음)을 주고, 그것을 내 AI 에 연결해 찾아 쓰게 한다고 적혀 있다.",
+          "status": "observed",
+          "evidence": [
+            "E1"
+          ]
+        },
+        {
+          "text": "배우는 사람의 진짜 문제는 영상을 고칠 때마다 처음부터 다시 만들어야 하는 부담이고, 강의보다 자료실이 구매 이유의 큰 몫일 것으로 추정한다. 자료실 구역이 커리큘럼보다 먼저 나오기 때문이다.",
+          "status": "inferred",
+          "evidence": [
+            "E1",
+            "E4"
+          ]
+        }
+      ],
+      "price": [
+        {
+          "text": "공개 전 가격은 45,000원, 2026년 11월 23일 0시부터 95,000원이라고 적혀 있다 (2026-11-17 에 읽은 값).",
+          "status": "observed",
+          "evidence": [
+            "E1"
+          ]
+        },
+        {
+          "text": "가격 상자에는 남은 날 표시, 공개일, 시청 기간(기준일부터 1년), 판매 종료 시각(2027년 3월 22일 23:59 KST)이 함께 적혀 있다 (2026-11-17 에 읽은 값).",
+          "status": "observed",
+          "evidence": [
+            "E1"
+          ]
+        },
+        {
+          "text": "환불은 강의를 하나도 열지 않았으면 전액, 열어 봤으면 열어 본 수만큼 빼는 계산식으로 공개돼 있다. 신청 버튼 바로 아래에 환불 정책 링크가 있다.",
+          "status": "observed",
+          "evidence": [
+            "E3",
+            "E1"
+          ]
+        },
+        {
+          "text": "결제 수단은 약관에 국내 결제사 한 곳과 PayPal 로 적혀 있다.",
+          "status": "observed",
+          "evidence": [
+            "E2"
+          ]
+        },
+        {
+          "text": "가격을 보여 주는 방식은 지금 가격, 오르는 날짜, 오른 뒤 가격, 남은 날을 한 상자에 묶는 구성이다. 공개 전에 사도록 재촉하는 선판매 구조로 추정한다.",
+          "status": "inferred",
+          "evidence": [
+            "E1",
+            "E4"
+          ]
+        },
+        {
+          "text": "해외 결제 때의 통화와 금액은 이 페이지에서 보지 못했다.",
+          "status": "unknown",
+          "evidence": []
+        }
+      ],
+      "revenue": []
+    },
+    "flow": {
+      "steps": [
+        {
+          "stage": "arrive",
+          "label": "도착",
+          "text": "첫 화면은 자동으로 도는 소개 영상과 전체 보기 버튼(10분 50초)이다. 제목과 가격은 그 아래에 나온다. 사람들이 어디서 들어오는지는 이 페이지만으로는 보이지 않는다.",
+          "status": "observed",
+          "evidence": [
+            "E1",
+            "E10",
+            "E4"
+          ]
+        },
+        {
+          "stage": "first_value",
+          "label": "첫 가치",
+          "text": "결제 전에 맛보는 곳은 소개 영상, 4부에 붙은 미리보기 영상(35분 24초), 메뉴의 무료 기초 강의 링크다. 이것이 결제 전 첫 가치 구실을 하는 것으로 추정한다. 결제 뒤의 첫 가치는 공개 전이라 볼 수 없었다.",
+          "status": "inferred",
+          "evidence": [
+            "E1"
+          ]
+        },
+        {
+          "stage": "signup",
+          "label": "가입",
+          "text": "머리말에 로그인과 회원가입 버튼이 있고, 신청 버튼 문구가 로그인을 먼저 요구한다. 가입 화면은 열지 않았다.",
+          "status": "observed",
+          "evidence": [
+            "E1"
+          ]
+        },
+        {
+          "stage": "payment",
+          "label": "결제",
+          "text": "신청 버튼은 가격 상자와 페이지 맨 아래 두 곳에 있다. 버튼 아래에 결제 전 계정과 수강권을 다시 확인한다는 안내가 있다. 결제 화면은 열지 않았다.",
+          "status": "observed",
+          "evidence": [
+            "E1",
+            "E4"
+          ]
+        },
+        {
+          "stage": "return",
+          "label": "결제 뒤",
+          "text": "결제 뒤 강의실 화면, 자료실을 받는 방법, 다시 오게 하는 장치는 로그인 뒤라 모른다.",
+          "status": "unknown",
+          "evidence": []
+        }
+      ]
+    },
+    "map": {
+      "screens": [
+        {
+          "name": "판매 페이지 (넓은 화면)",
+          "purpose": "한 장 안에서 소개, 가격, 내용, 믿을 근거, 걱정 풀기, 신청까지 끝낸다.",
+          "features": [
+            "1. 소개 영상: 자동 재생 미리보기와 전체 보기 버튼",
+            "2. 제목과 한 줄 소개 옆에 가격 상자: 가격, 오르는 날짜, 공개일, 시청 기간, 판매 종료, 신청 버튼, 환불 링크",
+            "3. 페이지 안 이동 메뉴 4칸",
+            "4. 함께 주는 것: 큰 숫자 3개로 자료실 규모를 보여 준다",
+            "5. 커리큘럼: 4부 11강, 부마다 미리보기 영상이나 미리보기 단추 하나, 강마다 예정 표시",
+            "6. 공개와 진행 안내 상자: 공개일, 분량 예정, 바뀔 수 있다는 단서",
+            "7. 지금 확인할 수 있는 구성",
+            "8. 후기 3개: 유튜브 댓글, 아이디 일부 가림",
+            "9. 자주 묻는 질문 4개 (접혀 있음)",
+            "10. 마지막 신청 버튼",
+            "11. 꼬리말: 사업자 정보, 약관, 환불, 문의, 언어 8개"
+          ],
+          "status": "observed",
+          "evidence": [
+            "E1",
+            "E4"
+          ]
+        },
+        {
+          "name": "판매 페이지 (좁은 화면, 너비 500)",
+          "purpose": "같은 내용을 한 줄로 쌓아 보여 준다.",
+          "features": [
+            "메뉴가 접힌 단추 하나로 바뀐다",
+            "가격 상자가 소개 문단 아래로 내려온다",
+            "커리큘럼의 영상과 강 목록이 위아래로 쌓인다",
+            "구역 순서는 넓은 화면과 같다"
+          ],
+          "status": "observed",
+          "evidence": [
+            "E5"
+          ]
+        },
+        {
+          "name": "이용약관",
+          "purpose": "이용 조건, 결제, 환불, 콘텐츠 권리를 알린다.",
+          "features": [
+            "12개 조와 사업자 정보",
+            "결제 수단과 환불 기준 요약",
+            "콘텐츠 복제와 재판매 금지"
+          ],
+          "status": "observed",
+          "evidence": [
+            "E2"
+          ]
+        },
+        {
+          "name": "환불 정책",
+          "purpose": "환불 계산식과 예시를 미리 보여 준다.",
+          "features": [
+            "근거 법령 표",
+            "계산식",
+            "금액 예시 4개",
+            "신청은 로그인 뒤에만"
+          ],
+          "status": "observed",
+          "evidence": [
+            "E3"
+          ]
+        },
+        {
+          "name": "가입, 결제, 강의실",
+          "purpose": "로그인 뒤 화면이라 보지 않았다.",
+          "features": [],
+          "status": "unknown",
+          "evidence": []
+        }
+      ]
+    },
+    "tech": {
+      "items": [
+        {
+          "layer": "화면 스크립트",
+          "text": "같은 출처에서 스크립트 10개가 실렸다. 이름은 해시가 붙은 main 파일 하나와 번호가 붙은 chunk 파일들이다.",
+          "status": "observed",
+          "evidence": [
+            "E1"
+          ]
+        },
+        {
+          "layer": "화면 스크립트",
+          "text": "해시 붙은 main 과 번호 chunk, static 폴더 구조로 보아 React 계열 묶음 도구로 만든 한 페이지 앱으로 추정한다. 스크립트 안의 경로 목록(/program, /curriculum, /dashboard 등)도 화면 쪽에서 길을 나누는 구조와 맞는다.",
+          "status": "inferred",
+          "evidence": [
+            "E1",
+            "E6"
+          ]
+        },
+        {
+          "layer": "검색용 HTML",
+          "text": "스크립트 없이 받은 HTML 에도 제목, 소개, 가격 안내, 강 제목이 글로 들어 있고, 강의와 기관을 알리는 JSON-LD 3건과 공유용 메타가 있다.",
+          "status": "observed",
+          "evidence": [
+            "E7"
+          ]
+        },
+        {
+          "layer": "브라우저 저장소",
+          "text": "localStorage 키 이름 하나(언어 설정으로 보이는 이름)와 IndexedDB 이름 두 개(firebase 로 시작)가 있다. 값은 읽지 않았다.",
+          "status": "observed",
+          "evidence": [
+            "E1"
+          ]
+        },
+        {
+          "layer": "다국어와 로그인",
+          "text": "저장소 이름과 언어별 경로 8개로 보아 다국어 라이브러리와 Firebase 계열 로그인 도구를 쓰는 것으로 추정한다.",
+          "status": "inferred",
+          "evidence": [
+            "E1",
+            "E6"
+          ]
+        },
+        {
+          "layer": "미디어",
+          "text": "미리보기는 같은 출처의 mp4 영상과 webp 포스터 그림으로 실린다 (영상 4개, 그림 5개).",
+          "status": "observed",
+          "evidence": [
+            "E1"
+          ]
+        },
+        {
+          "layer": "결제",
+          "text": "약관에 결제사 두 곳의 이름이 적혀 있고, 결제 수단 정보는 결제사가 처리한다고 되어 있다. 실제 연동은 보지 않았다.",
+          "status": "observed",
+          "evidence": [
+            "E2"
+          ]
+        },
+        {
+          "layer": "보안 머리말",
+          "text": "응답에 HSTS, CSP, nosniff 같은 보안 머리말이 있다. 서버 종류를 알리는 줄은 없다.",
+          "status": "observed",
+          "evidence": [
+            "E9"
+          ]
+        },
+        {
+          "layer": "읽지 못한 스크립트",
+          "text": "가장 큰 스크립트 1개(약 1.3MB)는 REA 정적 분석이 메모리 한도와 시간 한도에 걸려 끝나지 않았다. 그 안의 호출 주소는 모른다.",
+          "status": "unknown",
+          "evidence": []
+        },
+        {
+          "layer": "다른 출처",
+          "text": "REA 가 기록에서 뺀 다른 출처 자원 74개가 어느 서비스의 것인지(분석 도구, 글꼴, 영상 등) 모른다.",
+          "status": "unknown",
+          "evidence": []
+        },
+        {
+          "layer": "서버",
+          "text": "서버, 데이터 저장소, 호스팅은 밖에서 보이지 않는다.",
+          "status": "unknown",
+          "evidence": []
+        }
+      ]
+    },
+    "unknowns": [
+      {
+        "question": "구매자 수, 매출, 전환율",
+        "why": "페이지에 공개된 숫자가 없다. 페이지의 큰 숫자 3개는 자료실 규모이지 판매 실적이 아니다.",
+        "next": "운영자가 직접 공개한 자료가 있을 때만 적는다. 없으면 비워 둔다."
+      },
+      {
+        "question": "실제로 누가 사는가",
+        "why": "페이지는 대상을 이름 붙여 말하지 않고, 구매자 정보는 밖에서 보이지 않는다.",
+        "next": "공개 후기와 운영자의 공개 영상에서 스스로 밝힌 대상을 찾아본다."
+      },
+      {
+        "question": "가입과 결제 화면의 단계 수, 결제 뒤 첫 화면",
+        "why": "로그인과 결제 뒤는 열지 않는다.",
+        "next": "운영자가 공개한 안내 영상이나 도움말이 있으면 그것만 본다."
+      },
+      {
+        "question": "접혀 있는 글의 내용 (자주 묻는 질문의 답, 수업 소개 더 보기)",
+        "why": "REA 는 페이지를 누르지 않는다. 접힌 글은 접근성 글자에 실리지 않았다.",
+        "next": "사람이 직접 펼쳐 읽고 메모를 근거로 올린다."
+      },
+      {
+        "question": "다른 출처 자원 74개와 처음 뜰 때 오간 요청",
+        "why": "REA 는 허용한 출처 밖의 항목을 기록에서 빼고, 붙기 전의 요청은 기록하지 못한다.",
+        "next": "필요하면 브라우저 개발자 도구의 네트워크 탭을 사람이 직접 본다."
+      },
+      {
+        "question": "가장 큰 스크립트 안의 내용",
+        "why": "정적 분석이 메모리 1GB 에서 실패했고, 8GB 와 240초로 늘려도 시간 한도에 걸렸다.",
+        "next": "사업을 읽는 데는 꼭 필요하지 않다. 넘어간다."
+      },
+      {
+        "question": "색과 글꼴의 정확한 값",
+        "why": "REA 근거에는 계산된 스타일이 없다. 화면 캡처로만 보인다.",
+        "next": "내 버전은 색과 글꼴을 처음부터 따로 정하고, 두 화면을 나란히 놓고 눈으로 확인한다."
+      }
+    ],
+    "my_version": {
+      "working_name": "한 접시 사진 교실 (가상의 예시)",
+      "same_problem": "아직 공개 전인 온라인 강의를 한 장짜리 페이지에서 믿음을 주며 미리 판다. 파는 사람 쪽의 같은 문제다.",
+      "who": "가상의 예시다. 동네 음식점 사장님에게 휴대폰으로 메뉴 사진 찍는 법을 가르치는 1인 강사.",
+      "mvp": [
+        "맨 위: 무엇을 얻는지 보여 주는 한 장면 (영상 대신 직접 그린 도형 그림)",
+        "제목과 한 줄 약속 옆에 가격 상자: 지금 가격, 오르는 날짜와 오른 뒤 가격, 남은 날, 공개일, 수강 기간, 신청 단추, 환불 안내",
+        "함께 주는 것을 큰 숫자 3개로",
+        "부와 강으로 나눈 목차, 강마다 만들 결과물 한 줄과 준비 상태 표시",
+        "공개 일정과 바뀔 수 있다는 단서를 따로 상자에",
+        "먼저 본 사람의 한마디 3개, 걱정을 푸는 질문 4개, 마지막 신청 단추"
+      ],
+      "differences": [
+        {
+          "title": "대상과 주제",
+          "text": "코드로 영상을 만드는 사람이 아니라 가게 사장님, 주제는 휴대폰 음식 사진이다. 예시 결과물과 목차를 모두 새로 쓴다."
+        },
+        {
+          "title": "형태",
+          "text": "영상이 하나도 없는 가벼운 정적 한 장이다. 밝은 종이 바탕에 풀색과 토마토색, 그림은 코드로 그린 도형뿐이고, 바깥 글꼴이나 스크립트를 부르지 않는다."
+        },
+        {
+          "title": "유통",
+          "text": "회원 체계와 결제 연동이 없는 보기용 예시다. 신청 단추는 동작하지 않고, 화면에 예시라고 밝힌다. 언어는 한국어 하나다."
+        }
+      ],
+      "not_taken": [
+        "문구: 제목, 소개 문장, 강 이름, 질문과 답을 하나도 옮기지 않는다",
+        "이름과 로고, 도메인",
+        "그림, 영상, 아이콘 파일",
+        "색 조합과 글꼴",
+        "가격 숫자, 날짜, 자료실 숫자, 후기 내용"
+      ]
+    }
+  },
+  "skeleton": {
+    "note": "넓은 화면 전체 캡처를 보고 구역의 위치를 세로 길이로 적은 뼈대. 구역 순서와 길이는 관찰이고, 층 이름(데려오는, 가치를 주는, 돈 받는, 다시 오게 하는)은 해석이다. 다시 오게 하는 층은 로그인 뒤라 보이지 않았다. 원본의 글과 그림은 들어 있지 않다.",
+    "evidence": [
+      "E4",
+      "E1"
+    ],
+    "blocks": [
+      {
+        "name": "머리말 메뉴",
+        "role": "other",
+        "weight": 100,
+        "kind": "nav",
+        "status": "inferred",
+        "mine": ".top"
+      },
+      {
+        "name": "소개 장면",
+        "role": "attract",
+        "weight": 835,
+        "kind": "media",
+        "status": "inferred",
+        "mine": ".scene"
+      },
+      {
+        "name": "제목과 가격 상자",
+        "role": "pay",
+        "weight": 765,
+        "kind": "price",
+        "status": "inferred",
+        "mine": ".lead"
+      },
+      {
+        "name": "페이지 안 이동",
+        "role": "other",
+        "weight": 150,
+        "kind": "nav",
+        "status": "inferred",
+        "mine": ".jump"
+      },
+      {
+        "name": "함께 주는 것, 큰 숫자 3개",
+        "role": "value",
+        "weight": 1150,
+        "kind": "numbers",
+        "status": "inferred",
+        "mine": "#gift"
+      },
+      {
+        "name": "목차: 묶음과 강, 준비 상태",
+        "role": "value",
+        "weight": 2200,
+        "kind": "list",
+        "status": "inferred",
+        "mine": "#order"
+      },
+      {
+        "name": "일정과 단서 상자",
+        "role": "pay",
+        "weight": 420,
+        "kind": "notice",
+        "status": "inferred",
+        "mine": "#back"
+      },
+      {
+        "name": "지금 확인할 수 있는 구성",
+        "role": "value",
+        "weight": 560,
+        "kind": "text",
+        "status": "inferred",
+        "taken": false
+      },
+      {
+        "name": "먼저 본 사람의 말",
+        "role": "pay",
+        "weight": 670,
+        "kind": "quotes",
+        "status": "inferred",
+        "mine": ".voices"
+      },
+      {
+        "name": "자주 묻는 물음",
+        "role": "pay",
+        "weight": 630,
+        "kind": "faq",
+        "status": "inferred",
+        "mine": "#ask"
+      },
+      {
+        "name": "마지막 신청",
+        "role": "pay",
+        "weight": 555,
+        "kind": "cta",
+        "status": "inferred",
+        "mine": ".last"
+      },
+      {
+        "name": "꼬리말",
+        "role": "other",
+        "weight": 391,
+        "kind": "footer",
+        "status": "inferred",
+        "mine": ".foot"
+      }
+    ]
+  }
+}

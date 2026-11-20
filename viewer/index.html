@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>reversebusiness</title>
+<link rel="stylesheet" href="viewer.css">
+</head>
+<body>
+<div class="page">
+
+  <header class="top">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-name">CONNECT AI LAB</span>
+      <span class="brand-sep">/</span>
+      <span class="brand-kit">reversebusiness</span>
+    </div>
+    <div class="top-tools">
+      <button type="button" class="tool" id="btn-open" data-t="open">다른 리포트 열기</button>
+      <button type="button" class="tool" id="btn-lang" aria-label="language">EN</button>
+      <input type="file" id="file" accept=".json,application/json" hidden>
+    </div>
+  </header>
+
+  <!-- 리포트가 아직 없을 때 -->
+  <section class="empty" id="empty" hidden>
+    <p class="eyebrow">REVERSE BUSINESS</p>
+    <h1 data-t="empty_title">report.json 을 여기에 놓으세요</h1>
+    <p class="empty-sub" data-t="empty_sub">파일은 이 브라우저 안에서만 읽습니다. 어디로도 보내지 않습니다.</p>
+    <button type="button" class="pick" id="btn-pick" data-t="pick">파일 고르기</button>
+    <p class="empty-err" id="empty-err" role="alert"></p>
+  </section>
+
+  <!-- 리포트 -->
+  <main id="report" hidden>
+    <section class="hero">
+      <p class="eyebrow" id="h-kind"></p>
+      <h1 id="h-name"></h1>
+      <p class="one-line" id="h-line"></p>
+      <p class="thin-note" id="h-thin" role="note" hidden></p>
+      <div class="depth" id="h-depth" hidden></div>
+    </section>
+
+    <!-- 볼거리 1: 해부 장면 -->
+    <section class="show" id="show-stage" aria-labelledby="stage-title">
+      <div class="show-head">
+        <p class="show-no">A</p>
+        <div>
+          <p class="show-en">DISSECTION</p>
+          <h2 class="show-title" id="stage-title" data-s="stage_title">해부 장면</h2>
+        </div>
+        <p class="show-sub" data-s="stage_sub">페이지의 구역을 뼈대로만 그려 층으로 벌립니다. 원본의 화면, 문구, 로고는 쓰지 않습니다.</p>
+      </div>
+      <div class="stage-wrap">
+        <canvas id="stage" class="stage-canvas" role="img" aria-label="해부 장면"></canvas>
+        <div class="stage-bar">
+          <button type="button" class="tool" id="stage-play" data-s="replay">다시 재생</button>
+          <button type="button" class="pick" id="stage-save" data-s="save_video">영상으로 저장 (9:16)</button>
+          <span class="stage-msg" id="stage-msg" role="status"></span>
+        </div>
+        <div class="rec" id="rec" hidden>
+          <div class="rec-bar"><i id="rec-fill"></i></div>
+          <p class="rec-text" id="rec-text"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 볼거리 2: 돈이 흐르는 구조도 -->
+    <section class="show" id="show-flow" aria-labelledby="flow-title">
+      <div class="show-head">
+        <p class="show-no">B</p>
+        <div>
+          <p class="show-en">MONEY FLOW</p>
+          <h2 class="show-title" id="flow-title" data-s="flow_title">돈이 흐르는 구조도</h2>
+        </div>
+        <p class="show-sub" id="flow-sub"></p>
+      </div>
+      <div class="flow" id="flow"></div>
+      <div class="flow-detail" id="flow-detail" hidden></div>
+    </section>
+
+    <!-- 볼거리 3: 원본 뼈대와 내 버전 -->
+    <section class="show" id="show-cmp" aria-labelledby="cmp-title">
+      <div class="show-head">
+        <p class="show-no">C</p>
+        <div>
+          <p class="show-en">SKELETON / MY VERSION</p>
+          <h2 class="show-title" id="cmp-title" data-s="cmp_title">원본 뼈대에서 내 버전으로</h2>
+        </div>
+        <p class="show-sub" data-s="cmp_sub">배우는 것은 구역의 순서와 짜임뿐입니다. 문구, 이름, 색, 그림은 새로 만듭니다.</p>
+      </div>
+      <div class="cmp" id="cmp">
+        <div class="cmp-main">
+          <div class="cmp-ctl">
+            <span class="cmp-end lab" data-s="cmp_a">원본 뼈대</span>
+            <input type="range" id="cmp-range" min="0" max="100" value="0" aria-label="원본 뼈대에서 내 버전으로">
+            <span class="cmp-end lab gold" data-s="cmp_b">내 버전</span>
+            <button type="button" class="tool" id="cmp-play" data-s="cmp_play">전환 보기</button>
+          </div>
+          <div class="cmp-win" id="cmp-win">
+            <div class="cmp-page" id="cmp-page">
+              <div class="cmp-mine" id="cmp-mine"></div>
+              <div class="cmp-skel" id="cmp-skel"></div>
+            </div>
+          </div>
+        </div>
+        <ol class="cmp-list" id="cmp-list"></ol>
+      </div>
+    </section>
+
+    <section class="facts">
+      <dl class="meta" id="h-meta"></dl>
+      <div class="tally" id="h-tally"></div>
+    </section>
+
+    <nav class="index" id="index" aria-label="six cells"></nav>
+
+    <section class="grid" id="grid"></section>
+
+    <footer class="foot">
+      <p data-t="foot_line">이 리포트는 공개적으로 관찰한 것만 담습니다. 추정은 추정으로, 모르는 것은 모름으로 적습니다. 공부와 기획을 위한 정리이며 법률 자문이 아닙니다.</p>
+      <p class="made">
+        <span>reversebusiness</span>
+        <span class="made-sep">·</span>
+        <span>CONNECT AI LAB</span>
+        <span class="made-sep">·</span>
+        <span data-s="motto">모두를 위한 AI 교육</span>
+        <a href="https://www.youtube.com/@CONNECT-AI-LAB" target="_blank" rel="noopener noreferrer">YouTube</a>
+        <a href="https://www.aicitybuilders.com" target="_blank" rel="noopener noreferrer">aicitybuilders.com</a>
+      </p>
+    </footer>
+  </main>
+
+</div>
+<script src="viewer.js"></script>
+<script src="stage.js"></script>
+<script src="sections.js"></script>
+</body>
+</html>

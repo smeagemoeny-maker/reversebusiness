@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>한 접시 사진 교실 (가상의 예시)</title>
+<meta name="description" content="구조 공부용으로 만든 가상의 예시 페이지. 실제 수업, 가격, 후기가 아닙니다.">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<p class="ribbon">가상의 예시 페이지 · 실제 수업도, 실제 가격도, 실제 후기도 아닙니다 · 구조 공부용</p>
+
+<header class="top">
+  <a class="mark" href="#top" aria-label="맨 위로">
+    <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="#2f6b4f"/><circle cx="20" cy="20" r="11" fill="#fbf6ea"/><circle cx="20" cy="20" r="5" fill="#e2573a"/></svg>
+    <span>한 접시 사진 교실</span>
+  </a>
+  <nav class="top-nav" aria-label="위쪽 메뉴">
+    <a href="#gift">받는 것</a>
+    <a href="#order">수업 순서</a>
+    <a href="#ask">궁금한 점</a>
+  </nav>
+  <a class="btn btn-small" href="#apply">신청 (예시)</a>
+</header>
+
+<main id="top">
+  <section class="scene" aria-label="한 장면">
+    <svg class="scene-art" viewBox="0 0 960 420" role="img" aria-label="창가 식탁 위의 접시와 휴대폰을 위에서 본 그림">
+      <rect width="960" height="420" rx="28" fill="#e9dfc8"/>
+      <polygon points="0,0 420,0 250,420 0,420" fill="#f6efdc"/>
+      <polygon points="120,0 300,0 150,420 -30,420" fill="#fffaf0" opacity=".8"/>
+      <g stroke="#d8ccb0" stroke-width="2"><line x1="0" y1="140" x2="960" y2="140"/><line x1="0" y1="280" x2="960" y2="280"/></g>
+      <ellipse cx="430" cy="232" rx="150" ry="150" fill="#cbbf9f" opacity=".45"/>
+      <circle cx="420" cy="220" r="150" fill="#fffdf7"/>
+      <circle cx="420" cy="220" r="112" fill="#f3ecdb"/>
+      <path d="M350 230c10-52 60-76 104-60s58 62 30 96-92 34-118 4-18-28-16-40z" fill="#e2573a"/>
+      <circle cx="398" cy="204" r="16" fill="#f5c84b"/><circle cx="446" cy="238" r="12" fill="#f5c84b"/>
+      <path d="M372 250q18 12 40 4M428 190q16-4 28 8" stroke="#2f6b4f" stroke-width="7" stroke-linecap="round" fill="none"/>
+      <g transform="rotate(-14 720 210)">
+        <rect x="640" y="70" width="170" height="290" rx="26" fill="#22332b"/>
+        <rect x="652" y="92" width="146" height="232" rx="10" fill="#fbf6ea"/>
+        <circle cx="725" cy="196" r="52" fill="#fffdf7" stroke="#d8ccb0" stroke-width="3"/>
+        <path d="M700 200c4-18 22-27 38-21s20 22 10 34-32 12-41 1-8-10-7-14z" fill="#e2573a"/>
+        <g stroke="#2f6b4f" stroke-width="2" opacity=".55"><line x1="700" y1="92" x2="700" y2="324"/><line x1="750" y1="92" x2="750" y2="324"/><line x1="652" y1="170" x2="798" y2="170"/><line x1="652" y1="246" x2="798" y2="246"/></g>
+        <circle cx="725" cy="342" r="10" fill="#fbf6ea"/>
+      </g>
+      <g transform="translate(150 300) rotate(-28)"><rect width="150" height="9" rx="4" fill="#8a6a3e"/><rect y="20" width="150" height="9" rx="4" fill="#8a6a3e"/></g>
+    </svg>
+    <p class="scene-note">창가 자리, 휴대폰 하나, 접시 하나. 준비물은 이게 전부예요.</p>
+  </section>
+
+  <section class="lead" aria-labelledby="lead-title">
+    <div class="lead-copy">
+      <p class="tag">음식점 사장님을 위한 휴대폰 사진 수업</p>
+      <h1 id="lead-title">우리 가게 메뉴,<br>내 폰으로 먹음직스럽게</h1>
+      <p class="lead-text">사진 기사를 부르기엔 메뉴가 자주 바뀌죠. 가게 창가에서, 장사 시작 전 십 분 동안, 손에 쥔 폰으로 찍는 순서를 알려 드려요.</p>
+      <ul class="ticks">
+        <li>카메라를 새로 사지 않아요</li>
+        <li>수업마다 그날 올릴 사진 한 장이 남아요</li>
+        <li>배달 앱 대표 사진 규격까지 다뤄요</li>
+      </ul>
+    </div>
+    <aside class="price" id="apply" aria-label="신청 안내 (예시)">
+      <p class="price-flag">먼저 신청하는 분 가격 <b>예시</b></p>
+      <p class="price-now"><span>38,000</span>원</p>
+      <p class="price-next">12월 14일부터는 64,000원이 돼요</p>
+      <p class="price-left">값이 오르기까지 <b>9일</b> 남음 <small>(예시 숫자)</small></p>
+      <table class="facts">
+        <tr><th>수업 여는 날</th><td>12월 14일, 아홉 수업 한꺼번에</td></tr>
+        <tr><th>다시 보기</th><td>연 날부터 180일</td></tr>
+        <tr><th>신청 마감</th><td>내년 2월 말</td></tr>
+      </table>
+      <a class="btn btn-wide" href="#apply" aria-disabled="true">지금 값으로 신청하기</a>
+      <p class="price-fine">보기용 단추라 눌러도 아무 일도 일어나지 않아요.<br><a href="#back">돈 내기 전에 돌려받는 기준부터 읽기</a></p>
+    </aside>
+  </section>
+
+  <nav class="jump" aria-label="이 페이지 안에서 이동">
+    <a href="#gift">받는 것</a>
+    <a href="#order">수업 순서</a>
+    <a href="#back">일정과 돌려받기</a>
+    <a href="#ask">궁금한 점</a>
+  </nav>
+
+  <section class="gift" id="gift" aria-labelledby="gift-title">
+    <h2 id="gift-title">수업과 같이 받는 것</h2>
+    <p class="sub">찍을 때 옆에 펴 두는 종이 자료예요. 숫자는 모두 예시입니다.</p>
+    <ol class="nums">
+      <li><b>36</b><span>구도 카드</span><em>국물, 구이, 디저트처럼 음식 종류별로 접시와 폰을 어디에 둘지 그린 카드</em></li>
+      <li><b>12</b><span>빛 배치 그림</span><em>창이 하나인 가게, 지하 가게, 밤 장사 가게에서 불을 어디에 켤지</em></li>
+      <li><b>5</b><span>보정 순서표</span><em>폰에 원래 깔린 사진 앱만으로 끝내는 다섯 단계</em></li>
+    </ol>
+  </section>
+
+  <section class="order" id="order" aria-labelledby="order-title">
+    <h2 id="order-title">아홉 수업, 세 묶음</h2>
+    <p class="sub">묶음마다 가게에서 바로 쓰는 결과물이 하나씩 남아요.</p>
+
+    <article class="pack">
+      <header><span class="pack-no">첫째 묶음</span><h3>빛 찾기</h3><p>사진의 절반은 자리예요. 우리 가게에서 음식이 가장 맛있어 보이는 자리부터 찾습니다.</p></header>
+      <ol>
+        <li><i>1</i><div><b>가장 밝은 자리 지도 그리기</b><small>남는 것: 시간대별로 표시한 우리 가게 자리 지도</small></div><u>준비 중</u></li>
+        <li><i>2</i><div><b>흰 종이 한 장으로 그림자 누그러뜨리기</b><small>남는 것: 같은 접시의 전과 후 사진 한 쌍</small></div><u>준비 중</u></li>
+        <li><i>3</i><div><b>저녁 장사 가게의 불 켜는 법</b><small>남는 것: 스탠드 하나로 찍은 저녁 메뉴 사진</small></div><u>준비 중</u></li>
+      </ol>
+    </article>
+
+    <article class="pack">
+      <header><span class="pack-no">둘째 묶음</span><h3>접시 놓기</h3><p>무엇을 가운데 두고 무엇을 뺄지 정합니다. 수저 하나, 손 하나가 사진을 바꿔요.</p></header>
+      <ol>
+        <li><i>4</i><div><b>내려다보기와 비스듬히 보기 고르기</b><small>남는 것: 메뉴별로 정한 각도 표</small></div><u>준비 중</u></li>
+        <li><i>5</i><div><b>수저와 손을 화면에 들이기</b><small>남는 것: 먹기 직전 느낌의 사진 석 장</small></div><u>준비 중</u></li>
+        <li><i>6</i><div><b>김과 윤기가 살아 있을 때 누르기</b><small>남는 것: 뜨거운 메뉴 한 가지의 대표 사진</small></div><u>준비 중</u></li>
+      </ol>
+    </article>
+
+    <article class="pack">
+      <header><span class="pack-no">셋째 묶음</span><h3>올리기</h3><p>찍은 사진을 손님이 보는 곳에 맞게 다듬어 올립니다.</p></header>
+      <ol>
+        <li><i>7</i><div><b>기본 사진 앱으로 다섯 단계 보정</b><small>남는 것: 내 가게용 보정 값 메모</small></div><u>준비 중</u></li>
+        <li><i>8</i><div><b>배달 앱 대표 사진 크기에 맞추기</b><small>남는 것: 잘리지 않는 대표 사진 세 장</small></div><u>준비 중</u></li>
+        <li><i>9</i><div><b>한 달 치 메뉴 사진을 하루에 몰아 찍기</b><small>남는 것: 촬영 순서표와 메뉴판 사진 묶음</small></div><u>준비 중</u></li>
+      </ol>
+    </article>
+  </section>
+
+  <section class="notice" id="back" aria-labelledby="back-title">
+    <h2 id="back-title">여는 날, 달라질 수 있는 것, 돌려받는 기준</h2>
+    <ul>
+      <li><b>여는 날</b> 아홉 수업을 12월 14일에 한꺼번에 엽니다. 예시 날짜예요.</li>
+      <li><b>달라질 수 있는 것</b> 수업 이름과 차례는 준비하면서 조금 바뀔 수 있어요. 묶음이 줄어드는 일이 생기면 먼저 알립니다.</li>
+      <li><b>돌려받는 기준</b> 한 수업도 틀지 않았다면 낸 돈을 모두, 틀었다면 튼 수업 몫만 빼고 돌려드려요. 이것도 예시 기준입니다.</li>
+    </ul>
+  </section>
+
+  <section class="voices" aria-labelledby="voices-title">
+    <h2 id="voices-title">먼저 들은 분의 한마디가 들어갈 자리</h2>
+    <p class="sub">지어낸 후기는 싣지 않아요. 실제로 받은 뒤에 채우는 칸입니다.</p>
+    <div class="voice-row">
+      <figure><blockquote>수업 전에 찍은 사진과 수업 뒤에 찍은 사진 한 쌍</blockquote><figcaption>받을 것 하나</figcaption></figure>
+      <figure><blockquote>아홉 수업 가운데 가게에서 가장 쓸모 있었던 하나와 그 까닭</blockquote><figcaption>받을 것 둘</figcaption></figure>
+      <figure><blockquote>사진을 바꾼 뒤 달라진 점. 본인이 밝혀도 좋다고 한 만큼만</blockquote><figcaption>받을 것 셋</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="ask" id="ask" aria-labelledby="ask-title">
+    <h2 id="ask-title">신청 전에 자주 나오는 물음</h2>
+    <details><summary>폰이 몇 해 된 건데 따라갈 수 있을까요?</summary><p>뒷면 렌즈가 하나뿐인 폰을 기준으로 수업을 짰어요. 화면이 깨끗하게 닦여 있으면 충분합니다.</p></details>
+    <details><summary>가게가 지하라 햇빛이 안 들어요.</summary><p>첫째 묶음의 세 번째 수업이 바로 그 경우예요. 스탠드 하나와 흰 종이로 시작합니다.</p></details>
+    <details><summary>다시 보기는 언제부터 세나요?</summary><p>수업이 열린 날부터 180일이에요. 미리 신청해도 열리기 전 날짜는 세지 않아요.</p></details>
+    <details><summary>신청하고 나서 마음이 바뀌면 어떻게 하나요?</summary><p>위의 돌려받는 기준 그대로예요. 한 수업도 틀지 않았다면 전부 돌려드려요.</p></details>
+  </section>
+
+  <section class="last" aria-label="마지막 신청">
+    <p class="tag tag-light">가상의 예시</p>
+    <h2>접시가 식기 전에, 사진부터</h2>
+    <p>아홉 수업 · 12월 14일에 엽니다</p>
+    <a class="btn btn-light" href="#apply">38,000원에 자리 잡기 (예시)</a>
+  </section>
+</main>
+
+<footer class="foot">
+  <p><b>한 접시 사진 교실</b>은 판매 페이지의 구조를 공부하려고 만든 가상의 예시입니다.</p>
+  <p>수업, 강사, 가격, 날짜, 숫자는 모두 지어낸 것이고 실제로 팔지 않습니다. 그림은 코드로 직접 그린 도형입니다.</p>
+</footer>
+</body>
+</html>

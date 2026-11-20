@@ -1,0 +1,48 @@
+{
+  "name": "rebiz",
+  "version": "0.6.0",
+  "description": "reversebusiness: 사업 웹사이트 주소 하나를 넣으면 그 사업을 해부한다. 읽기(겉, 흐름, 속), 해부(6칸), 내 버전 만들기, 검사. CONNECT AI LAB 오픈소스 1호.",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "rebiz": "bin/rebiz.mjs"
+  },
+  "files": [
+    "bin",
+    "lib",
+    "skill",
+    "viewer",
+    "examples/aicitybuilders-vibecoding/report.json",
+    "examples/aicitybuilders-vibecoding/my-version",
+    "examples/aicitybuilders-vibecoding/my-version.preview.jpg",
+    "examples/aicitybuilders-vibecoding/my-version.preview.json",
+    "README.md",
+    "AGENTS.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node scripts/test.mjs",
+    "demo": "node bin/rebiz.mjs demo",
+    "check:example": "node bin/rebiz.mjs check examples/aicitybuilders-vibecoding/report.json",
+    "dry-run": "node bin/rebiz.mjs --dry-run"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smeagemoeny-maker/reversebusiness.git"
+  },
+  "homepage": "https://github.com/smeagemoeny-maker/reversebusiness",
+  "keywords": [
+    "agent-skill",
+    "claude-code",
+    "codex",
+    "cursor",
+    "gemini-cli",
+    "antigravity",
+    "business-analysis",
+    "clean-room"
+  ],
+  "license": "MIT"
+}
